@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { deleteDeck } from "../../utils/api";
 
-function DeckList({decks, setDecks}) {
+function DeckList({decks}) {
 
   const handleDeleteDeck = (event) => {
     if(window.confirm('Delete this deck? You will not be able to recover it.')){

@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Home from "./home/Home";
-import Decks from "./decks/Decks";
-import { Switch, Route, NavLink } from "react-router-dom";
+import CreateDeck from "./decks/CreateDeck"
+import Deck from "./decks/Deck"
+import { Switch, Route } from "react-router-dom";
 
 function Layout() {
   const [decks, setDecks] = useState([]);
@@ -17,9 +18,15 @@ function Layout() {
             <Home decks={decks} setDecks={setDecks} />
           </div>
         </Route>
-        <Route path="/decks">
-            <Decks />
+
+        <Route path="/decks/new">
+            <CreateDeck />
         </Route>
+
+        <Route path="/decks/:deckId">
+            <Deck />
+        </Route>
+
         <Route>
           <div className="container text-center">
             <NotFound />
