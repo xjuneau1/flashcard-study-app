@@ -20,7 +20,7 @@ function Layout() {
         </Route>
 
         <Route path="/decks/new">
-            <CreateDeck />
+            <CreateDeck pageName={'Create Deck'}/>
         </Route>
 
         <Route path="/decks/:deckId">

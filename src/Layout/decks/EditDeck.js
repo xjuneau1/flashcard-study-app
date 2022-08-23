@@ -1,8 +1,12 @@
 import React from 'react';
-
-function EditDeck() {
+import Breadcrumb from './Breadcrumb';
+function EditDeck({deck, pageName}) {
     return ( 
-        <h1>Edit Deck</h1>
+        <div>
+            <Breadcrumb deck={deck} pageName={pageName} />
+            <h1>Edit Deck {deck.id}</h1>
+        </div>
+        
      );
 }
 

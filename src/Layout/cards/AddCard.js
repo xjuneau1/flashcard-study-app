@@ -1,8 +1,8 @@
 import React from 'react';
 
-function AddCard() {
+function AddCard({deck}) {
     return ( 
-        <h1>Add Card</h1>
+        <h1>Add Card to Deck {deck.id}</h1>
      );
 }
 
