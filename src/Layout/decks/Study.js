@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { NavLink, useHistory, useRouteMatch } from "react-router-dom";
 
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
 
 function Study({ deck, pageName }) {
   const [card, setCard] = useState(0);
   const [side, setSide] = useState(true);
   const history = useHistory();
   const {path} = useRouteMatch()
-  console.log(path)
-
+  
   const handleChangeCard = () => {
-    if (card === deck.cards.length - 1) {
+    if (card === (deck.cards.length - 1)) {
       window.confirm("Reset Deck?\n\n Click 'cancel' to return home")
         ? setCard(0)
         : history.push("/");
