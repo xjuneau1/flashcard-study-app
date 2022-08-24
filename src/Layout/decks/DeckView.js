@@ -1,15 +1,15 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Breadcrumb from "../Breadcrumb";
 import { deleteCard } from "../../utils/api";
 function DeckView({ deck, handleDeleteDeck }) {
-  const { path } = useParams();
+  
   const handleDeleteCard = () => {
-    if(window.confirm('Delete this Card? You will not be able to recover it.')){
-      
+    if (
+      window.confirm("Delete this Card? You will not be able to recover it.")
+    ) {
     }
-    
   };
   return (
     <div className="container">
@@ -17,13 +17,22 @@ function DeckView({ deck, handleDeleteDeck }) {
       <div>
         <h4>{deck.name}</h4>
         <p>{deck.description}</p>
-        <NavLink className="badge-secondary rounded p-2 mr-2 text-decoration-none" to={`/decks/${deck.id}/edit`}>
+        <NavLink
+          className="badge-secondary rounded p-2 mr-2 text-decoration-none"
+          to={`/decks/${deck.id}/edit`}
+        >
           Edit
         </NavLink>
-        <NavLink className="badge-primary rounded mr-2 p-2 text-decoration-none" to={`/decks/${deck.id}/study`}>
+        <NavLink
+          className="badge-primary rounded mr-2 p-2 text-decoration-none"
+          to={`/decks/${deck.id}/study`}
+        >
           Study
         </NavLink>
-        <NavLink className="badge-primary rounded mr-4 p-2 text-decoration-none" to={`/decks/${deck.id}/cards/new`}>
+        <NavLink
+          className="badge-primary rounded mr-4 p-2 text-decoration-none"
+          to={`/decks/${deck.id}/cards/new`}
+        >
           Add Cards
         </NavLink>
         <button className="btn-danger rounded p-1" onClick={handleDeleteDeck}>
@@ -40,8 +49,18 @@ function DeckView({ deck, handleDeleteDeck }) {
                   </div>
                   <div className="column w-50">
                     <p>{card.back}</p>
-                    <NavLink className="badge-secondary rounded p-2 mr-2 text-decoration-none" to={`${path}/cards/${card.id}/edit`}>Edit</NavLink>
-                    <button className="btn-danger rounded p-1" onClick={handleDeleteCard}>Delete</button>
+                    <NavLink
+                      className="badge-secondary rounded p-2 mr-2 text-decoration-none"
+                      to={`/decks/${deck.id}/cards/${card.id}/edit`}
+                    >
+                      Edit
+                    </NavLink>
+                    <button
+                      className="btn-danger rounded p-1"
+                      onClick={handleDeleteCard}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               );

@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink, useHistory, useParams } from "react-router-dom";
 
 function DeckForm({ edit, formData, pageName, handleChange, handleSubmit }) {
-  const history = useHistory()
-  const {deckId} = useParams()
+  const history = useHistory();
+  const { deckId } = useParams();
   if (Object.keys(formData).length) {
     return (
-      <div >
+      <div>
         {edit ? (
           <div aria-label="breadcrumb" className="container row">
             <div>
@@ -50,7 +50,12 @@ function DeckForm({ edit, formData, pageName, handleChange, handleSubmit }) {
             <button className="btn-primary rounded mr-2" type="submit">
               Submit
             </button>
-            <button className="btn-secondary rounded" onClick={()=>history.push(`/decks/${deckId}`)}>Cancel</button>
+            <button
+              className="btn-secondary rounded"
+              onClick={() => history.push(`/decks/${deckId}`)}
+            >
+              Cancel
+            </button>
           </form>
         </div>
       </div>

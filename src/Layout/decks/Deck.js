@@ -47,7 +47,7 @@ function Deck({edit}) {
           <AddCard deck={deck} pageName={"Add Card"} />
         </Route>
         <Route path={`${path}/cards/:cardId/edit`}>
-          <EditCard deck={deck} pageName={"Edit Card"} />
+          <EditCard deck={deck} />
         </Route>
       </Switch>
     </div>
