@@ -16,7 +16,7 @@ function Home({decks, setDecks}) {
         <div>
             <Switch>
                 <Route exact path='/'>
-                    <NavLink className='btn-primary rounded p-1' to="/decks/new">Create Deck</NavLink>
+                    <NavLink className='btn-primary rounded p-2 text-decoration-none' to="/decks/new">Create Deck</NavLink>
                     <DeckList decks={decks} setDecks={setDecks} />
                 </Route>
             </Switch>

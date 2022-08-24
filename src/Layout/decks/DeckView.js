@@ -2,34 +2,46 @@ import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 
 import Breadcrumb from "../Breadcrumb";
-
-function DeckView({ deck, handleDeleteCard, handleDeleteDeck }) {
+import { deleteCard } from "../../utils/api";
+function DeckView({ deck, handleDeleteDeck }) {
   const { path } = useParams();
+  const handleDeleteCard = () => {
+    if(window.confirm('Delete this Card? You will not be able to recover it.')){
+      
+    }
+    
+  };
   return (
     <div className="container">
       <Breadcrumb deck={deck} />
-      <h1>{deck.name}</h1>
-      <p>{deck.description}</p>
-      <NavLink className="mr-1" to={`/decks/${deck.id}/edit`}>
-        Edit
-      </NavLink>
-      <NavLink className="mr-1" to={`/decks/${deck.id}/study`}>
-        Study
-      </NavLink>
-      <NavLink to={`/decks/${deck.id}/cards/new`}>Add Cards</NavLink>
-      <button onClick={handleDeleteDeck}>Delete Deck</button>
+      <div>
+        <h4>{deck.name}</h4>
+        <p>{deck.description}</p>
+        <NavLink className="badge-secondary rounded p-2 mr-2 text-decoration-none" to={`/decks/${deck.id}/edit`}>
+          Edit
+        </NavLink>
+        <NavLink className="badge-primary rounded mr-2 p-2 text-decoration-none" to={`/decks/${deck.id}/study`}>
+          Study
+        </NavLink>
+        <NavLink className="badge-primary rounded mr-4 p-2 text-decoration-none" to={`/decks/${deck.id}/cards/new`}>
+          Add Cards
+        </NavLink>
+        <button className="btn-danger rounded p-1" onClick={handleDeleteDeck}>
+          Delete Deck
+        </button>
+      </div>
       {Object.keys(deck).length
         ? deck.cards.map((card, index) => {
             if (!card.cards) {
               return (
-                <div className="d-flex border" key={index}>
-                  <div className="">
-                    <h6>{card.front}</h6>
+                <div className="d-flex border mt-4 p-4" key={index}>
+                  <div className="align-center mr-4 w-50">
+                    <p>{card.front}</p>
                   </div>
-                  <div className="column">
-                    <h6>{card.back}</h6>
-                    <NavLink to={`${path}/cards/${card.id}/edit`}>Edit</NavLink>
-                    <button onClick={handleDeleteCard}>Delete</button>
+                  <div className="column w-50">
+                    <p>{card.back}</p>
+                    <NavLink className="badge-secondary rounded p-2 mr-2 text-decoration-none" to={`${path}/cards/${card.id}/edit`}>Edit</NavLink>
+                    <button className="btn-danger rounded p-1" onClick={handleDeleteCard}>Delete</button>
                   </div>
                 </div>
               );

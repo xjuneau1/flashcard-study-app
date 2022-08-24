@@ -5,7 +5,7 @@ import { createDeck } from "../../utils/api";
 
 function CreateDeck({ decks, pageName }) {
   const initFormData = {
-    id: decks.length+1,
+    id: decks.length+2,
     name: "",
     description: "",
     cards: [],
@@ -15,10 +15,10 @@ function CreateDeck({ decks, pageName }) {
   const [formData, setFormData] = useState(initFormData);
   console.log(formData);
 
-  const handleCreateDeck = (event) => {
+  const handleCreateDeck = async (event) => {
     event.preventDefault();
     console.log(formData);
-    //createDeck(formData)
+    await createDeck(formData)
     history.push(`/decks/${formData.id}`)
   };
   const handleNameChange = ({ target }) => {

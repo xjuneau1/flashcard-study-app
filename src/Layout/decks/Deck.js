@@ -7,7 +7,7 @@ import EditCard from "../cards/EditCard";
 import AddCard from "../cards/AddCard";
 import DeckView from "./DeckView";
 
-import { readDeck } from "../../utils/api";
+import { readDeck, deleteDeck } from "../../utils/api";
 
 function Deck() {
   const { path, params } = useRouteMatch();
@@ -24,18 +24,15 @@ function Deck() {
     getDeckById();
   }, [params.deckId]);
   const handleDeleteDeck = () => {
-    // paste deleteDeck from utils/api
+    deleteDeck(params.deckId)
   };
-  const handleDeleteCard = () => {
-    // write deleteCard
-  };
+  
   return (
     <div className="container">
       <Switch>
         <Route exact path={path}>
           <DeckView
             deck={deck}
-            handleDeleteCard={handleDeleteCard}
             handleDeleteDeck={handleDeleteDeck}
           />
         </Route>
