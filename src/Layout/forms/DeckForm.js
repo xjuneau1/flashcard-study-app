@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useParams } from "react-router-dom";
 
 function DeckForm({ edit, formData, pageName, handleChange, handleSubmit }) {
+  const history = useHistory()
+  const {deckId} = useParams()
   if (Object.keys(formData).length) {
     return (
       <div >
@@ -45,9 +47,10 @@ function DeckForm({ edit, formData, pageName, handleChange, handleSubmit }) {
                 />
               </label>
             </div>
-            <button className="btn-primary rounded" type="submit">
+            <button className="btn-primary rounded mr-2" type="submit">
               Submit
             </button>
+            <button className="btn-secondary rounded" onClick={()=>history.push(`/decks/${deckId}`)}>Cancel</button>
           </form>
         </div>
       </div>

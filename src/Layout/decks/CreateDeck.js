@@ -14,7 +14,7 @@ function CreateDeck({ edit, decks }) {
 
   const history = useHistory();
   const [formData, setFormData] = useState(initFormData);
-  console.log(formData);
+  
 
   const handleCreateDeck = async (event) => {
     event.preventDefault();

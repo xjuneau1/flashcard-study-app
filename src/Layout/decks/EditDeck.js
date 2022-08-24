@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 
 import { readDeck, updateDeck } from '../../utils/api';
 
@@ -13,12 +13,13 @@ function EditDeck({edit, deck, pageName}) {
         description:'',
         cards:[]
     }
+    const {deckId} = useParams()
     const [formData, setFormData] = useState(initFormData)
     const history = useHistory()
 
     useEffect(()=>{
         async function getDeck(){
-            await readDeck(deck.id)
+            await readDeck(deckId)
             .then((data)=> setFormData({...data}))
             .then(console.log)
         }
@@ -27,8 +28,7 @@ function EditDeck({edit, deck, pageName}) {
 
     const handleSubmitEdit = async () => {
         if(window.confirm("Submit these changes?")){
-            await updateDeck(formData)
-            history.push('back')
+            await updateDeck({...formData})
         }
     }
     const handlePropChange = ({target}) => {
