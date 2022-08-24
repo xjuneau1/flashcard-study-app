@@ -5,10 +5,9 @@ import Breadcrumb from "../Breadcrumb";
 import { deleteCard } from "../../utils/api";
 function DeckView({ deck, handleDeleteDeck }) {
   
-  const handleDeleteCard = () => {
-    if (
-      window.confirm("Delete this Card? You will not be able to recover it.")
-    ) {
+  const handleDeleteCard = async () => {
+     {
+      
     }
   };
   return (
@@ -57,7 +56,12 @@ function DeckView({ deck, handleDeleteDeck }) {
                     </NavLink>
                     <button
                       className="btn-danger rounded p-1"
-                      onClick={handleDeleteCard}
+                      onClick={async ()=>{
+                          if(window.confirm("Delete this Card? You will not be able to recover it.")){
+                            await deleteCard(card.id)
+                            window.location.reload(true)
+                          }
+                      }}
                     >
                       Delete
                     </button>
