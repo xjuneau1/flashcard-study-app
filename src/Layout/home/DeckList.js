@@ -7,6 +7,7 @@ function DeckList({decks}) {
   const handleDeleteDeck = (event) => {
     if(window.confirm('Delete this deck? You will not be able to recover it.')){
       deleteDeck(event.target.parentNode.parentNode.id);
+      window.location.reload(true)
     }
   };
 

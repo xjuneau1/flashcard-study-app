@@ -8,7 +8,8 @@ import { Switch, Route } from "react-router-dom";
 
 function Layout() {
   const [decks, setDecks] = useState([]);
-  
+  const [toggle, setToggle] = useState(true)
+  const edit = true
   return (
     <div>
       <Header />
@@ -21,11 +22,11 @@ function Layout() {
         </Route>
 
         <Route path="/decks/new">
-            <CreateDeck decks={decks} pageName={'Create Deck'}/>
+            <CreateDeck edit={edit} toggle={toggle} decks={decks}/>
         </Route>
 
         <Route path="/decks/:deckId">
-            <Deck />
+            <Deck edit={edit} />
         </Route>
 
         <Route>

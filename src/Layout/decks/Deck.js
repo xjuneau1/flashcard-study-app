@@ -9,7 +9,7 @@ import DeckView from "./DeckView";
 
 import { readDeck, deleteDeck } from "../../utils/api";
 
-function Deck() {
+function Deck({edit}) {
   const { path, params } = useRouteMatch();
   const [deck, setDeck] = useState({});
 
@@ -23,8 +23,9 @@ function Deck() {
     }
     getDeckById();
   }, [params.deckId]);
+  
   const handleDeleteDeck = () => {
-    deleteDeck(params.deckId)
+    //deleteDeck(params.deckId)
   };
   
   return (
@@ -40,7 +41,7 @@ function Deck() {
           <Study deck={deck} setDeck={setDeck} pageName={"Study"} />
         </Route>
         <Route path={`${path}/edit`}>
-          <EditDeck deck={deck} pageName={"Edit Deck"} />
+          <EditDeck edit={edit} deck={deck} pageName={"Edit Deck"} />
         </Route>
         <Route path={`${path}/cards/new`}>
           <AddCard deck={deck} pageName={"Add Card"} />

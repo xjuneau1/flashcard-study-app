@@ -23,14 +23,14 @@ function Study({ deck, pageName }) {
   };
 
   if (Object.keys(deck).length) {
-    if (deck.cards.length < 2) {
+    if (deck.cards.length < 2 ) {
       return (
         <div>
           <Breadcrumb deck={deck} pageName="Study" />
           <div className="mt-3">
             <h2>Not Enough Cards</h2>
             <p className="mb-4">
-              You need at least 3 cards to study. There are {deck.cards.length} cards
+              You need at least 2 cards to study. There are {deck.cards.length} cards
               in this deck.
             </p>
             <NavLink
