@@ -20,7 +20,7 @@ function CreateDeck({ edit, decks, setDecks }) {
     getDecks();
 
     return () => {
-      abortController.signal();
+      abortController.abort();
     };
   }, []);
 
