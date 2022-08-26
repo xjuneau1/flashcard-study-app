@@ -22,7 +22,7 @@ function AddCard({deck, pageName}) {
         .then(setFormData(initFormData))
     }
     const handlePropChange = ({target}) => {
-        setFormData({...formData, [target.name]:target.value, id:deck.cards.length+1 })
+        setFormData({...formData, [target.name]:target.value })
     }
     return ( 
         <>
