@@ -145,6 +145,7 @@ A prompt will appear, and once you click "OK" the changes will be made. Simply r
 <br>
 When you have flipped through all of your cards a prompt will appear, clicking "Okay" resets the cards and allows you to flip through them again from the beginning. Clicking "Cancel" will return you to the home page.</p>
 
-
+<br>
+<br>
 
 <h2>Thanks for checking out my FlashCard Mania Application!</h2>
