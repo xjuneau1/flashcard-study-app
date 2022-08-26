@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import DeckForm from "../forms/DeckForm";
-import { createDeck } from "../../utils/api";
+import { createDeck, listDecks } from "../../utils/api";
 
-function CreateDeck({ edit, decks }) {
+function CreateDeck({ edit, decks, setDecks }) {
+  
   const initFormData = {
-    id: decks.length + 2,
     name: "",
     description: "",
+    "id": "",
     cards: [],
   };
+ 
+  useEffect(() => {
+    async function getDecks() {
+      listDecks()
+        .then((data) => setDecks(data))
+        .then(console.log(decks));
+    }
+    getDecks();
+  }, []);
 
   const history = useHistory();
-  const [formData, setFormData] = useState(initFormData);
-  
+  const [formData, setFormData] = useState({...initFormData});
 
   const handleCreateDeck = async (event) => {
     event.preventDefault();
@@ -23,7 +32,7 @@ function CreateDeck({ edit, decks }) {
     history.push(`/decks/${formData.id}`);
   };
   const handlePropChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value });
+    setFormData({ ...formData, [target.name]: target.value, id:decks.length+1});
     console.log(formData);
   };
 
