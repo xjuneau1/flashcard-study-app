@@ -57,16 +57,16 @@
 
 <br>
 
-<h3 id="view" style="text-decoration:1px underline">Viewing Decks:<h3>
+<h3 id="view" style="text-decoration:1px underline">Viewing Decks:</h3>
 <br>
 <p style="font-size:14px">When you run the server you will land on a page like the one below:</p>
 <br>
 <img src="./readme-images/viewdecks.jpg">
 
 <br>
-<p style="font-size:14px">From here you can "Create Deck" which will take you to a screen to create a new deck, or you can click "View" to view the entire details and all of the cards in the deck. </p>
+<p>From here you can "Create Deck" which will take you to a screen to create a new deck, or you can click "View" to view the entire details and all of the cards in the deck. </p>
 <br>
-<p style="font-size:14px">You can also jump straight into studying the cards in the deck by pressing "Study", and finally if you so wish you may delete the decks from the API via this page.</p>
+<p>You can also jump straight into studying the cards in the deck by pressing "Study", and finally if you so wish you may delete the decks from the API via this page.</p>
 
 <br>
 
@@ -77,5 +77,5 @@
 <img src="./readme-images/createdeck.jpg">
 
 <br>
-<p style="font-size:14px">On this page you can add a deck name and description, and click "Submit", this will create a new deck with the given name and description and send you to the deck page to edit the deck further. </p>
+<p>On this page you can add a deck name and description, and click "Submit", this will create a new deck with the given name and description and send you to the deck page to edit the deck further. </p>
 <br>
