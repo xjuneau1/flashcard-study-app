@@ -4,12 +4,7 @@ import { NavLink } from "react-router-dom";
 import Breadcrumb from "../Breadcrumb";
 import { deleteCard } from "../../utils/api";
 function DeckView({ deck, handleDeleteDeck }) {
-  
-  const handleDeleteCard = async () => {
-     {
-      
-    }
-  };
+
   return (
     <div className="container">
       <Breadcrumb deck={deck} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, useHistory } from "react-router-dom";
 
 import Study from "./Study";
 import EditDeck from "./EditDeck";
@@ -12,7 +12,7 @@ import { readDeck, deleteDeck } from "../../utils/api";
 function Deck({edit}) {
   const { path, params } = useRouteMatch();
   const [deck, setDeck] = useState({});
-
+  const history = useHistory()
   useEffect(() => {
     async function getDeckById() {
       try {
@@ -25,7 +25,10 @@ function Deck({edit}) {
   }, [params.deckId]);
   
   const handleDeleteDeck = () => {
-    //deleteDeck(params.deckId)
+    if(window.confirm("Are you sure you want to delete this deck? \n\n You will not be able to undo these changes.")){
+      deleteDeck(params.deckId)
+      history.push('/')
+    }
   };
   
   return (

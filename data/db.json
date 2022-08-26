@@ -9,11 +9,6 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "name": "React Forms",
-      "description": "Retrieve information from users via forms.",
-      "id": 3
     }
   ],
   "cards": [
@@ -46,12 +41,6 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
-    },
-    {
-      "front": "front",
-      "back": "back",
-      "id": 6,
-      "deckId": 3
     }
   ]
 }
