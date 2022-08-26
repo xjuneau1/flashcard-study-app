@@ -61,8 +61,9 @@
 <br>
 <p style="font-size:14px">When you run the server you will land on a page like the one below:</p>
 <br>
-<img src="https://github.com/xjuneau1/flashcard-study-app/tree/main/viewdecks.jpg?raw=true">
-(readme-images/viewdecks.JPG)
+
+[View image](readme-images/viewdecks.JPG)
+
 <br>
 <p>From here you can "Create Deck" which will take you to a screen to create a new deck, or you can click "View" to view the entire details and all of the cards in the deck. </p>
 <br>
