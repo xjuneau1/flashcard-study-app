@@ -18,16 +18,24 @@ function EditDeck({edit, deck, pageName}) {
     const history = useHistory()
 
     useEffect(()=>{
+        const abortController = new AbortController()
         async function getDeck(){
-            await readDeck(deckId)
+            await readDeck(deckId, abortController.signal)
             .then((data)=> setFormData({...data}))
         }
         getDeck()
+
+        return ()=>{
+            abortController.abort()
+        }
     },[])
 
-    const handleSubmitEdit = async () => {
+    const handleSubmitEdit = async (event) => {
+        event.preventDefault()
+        const abortController = new AbortController()
         if(window.confirm("Submit these changes?")){
-            await updateDeck({...formData})
+            await updateDeck({...formData}, abortController.signal)
+            history.push(`/decks/${deckId}`)
         }
     }
     const handlePropChange = ({target}) => {

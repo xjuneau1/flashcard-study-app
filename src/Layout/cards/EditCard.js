@@ -6,26 +6,35 @@ import Breadcrumb from "../Breadcrumb";
 import { readCard, updateCard } from "../../utils/api";
 
 function EditCard({ deck }) {
-  const {cardId} = useParams()
-  
+  const { cardId } = useParams();
+
   const initFormData = {
-    "id": "",
+    id: "",
     front: "",
     back: "",
   };
 
-  const [formData, setFormData] = useState({...initFormData, "id": cardId});
+  const [formData, setFormData] = useState({ ...initFormData, id: cardId });
 
   useEffect(() => {
+    const abortController = new AbortController();
     async function getCard() {
-      await readCard(cardId).then((data) => setFormData({ ...data }));
+      await readCard(cardId, abortController.signal).then((data) =>
+        setFormData({ ...data })
+      );
     }
     getCard();
+
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
-  const handleEditCard = async () => {
+  const handleEditCard = async (event) => {
+    event.preventDefault()
+    const abortController = new AbortController();
     if (window.confirm("Submit these changes?")) {
-      await updateCard({ ...formData });
+      await updateCard({ ...formData }, abortController.signal);
     }
   };
   const handlePropChange = ({ target }) => {

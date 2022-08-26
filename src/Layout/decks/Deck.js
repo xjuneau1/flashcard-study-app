@@ -9,36 +9,44 @@ import DeckView from "./DeckView";
 
 import { readDeck, deleteDeck } from "../../utils/api";
 
-function Deck({edit}) {
+function Deck({ edit }) {
   const { path, params } = useRouteMatch();
   const [deck, setDeck] = useState({});
-  const history = useHistory()
+  const history = useHistory();
+
   useEffect(() => {
+    const abortController = new AbortController();
     async function getDeckById() {
       try {
-        setDeck(await readDeck(params.deckId));
+        setDeck(await readDeck(params.deckId, abortController.signal));
       } catch (error) {
         console.log(error);
       }
     }
     getDeckById();
+
+    return () => {
+      abortController.abort();
+    };
   }, [params.deckId]);
-  
+
   const handleDeleteDeck = () => {
-    if(window.confirm("Are you sure you want to delete this deck? \n\n You will not be able to undo these changes.")){
-      deleteDeck(params.deckId)
-      history.push('/')
+    const abortController = new AbortController();
+    if (
+      window.confirm(
+        "Are you sure you want to delete this deck? \n\n You will not be able to undo these changes."
+      )
+    ) {
+      deleteDeck(params.deckId, abortController.signal);
+      history.push("/");
     }
   };
-  
+
   return (
     <div className="container">
       <Switch>
         <Route exact path={path}>
-          <DeckView
-            deck={deck}
-            handleDeleteDeck={handleDeleteDeck}
-          />
+          <DeckView deck={deck} handleDeleteDeck={handleDeleteDeck} />
         </Route>
         <Route exact path={`${path}/study`}>
           <Study deck={deck} setDeck={setDeck} pageName={"Study"} />

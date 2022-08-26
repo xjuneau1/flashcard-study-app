@@ -5,40 +5,46 @@ import DeckForm from "../forms/DeckForm";
 import { createDeck, listDecks } from "../../utils/api";
 
 function CreateDeck({ edit, decks, setDecks }) {
-  
   const initFormData = {
     name: "",
     description: "",
-    "id": "",
+    id: "",
     cards: [],
   };
- 
+
   useEffect(() => {
+    const abortController = new AbortController();
     async function getDecks() {
-      listDecks()
-        .then((data) => setDecks(data))
+      listDecks(abortController.signal).then((data) => setDecks(data));
     }
     getDecks();
+
+    return () => {
+      abortController.signal();
+    };
   }, []);
 
   const history = useHistory();
-  const [formData, setFormData] = useState({...initFormData});
+  const [formData, setFormData] = useState({ ...initFormData });
 
   const handleCreateDeck = async (event) => {
     event.preventDefault();
-    console.log(formData);
-    await createDeck(formData);
+    const abortController = new AbortController();
+    await createDeck(formData, abortController.signal);
     history.push(`/decks/${formData.id}`);
   };
   const handlePropChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value, id:decks.length+1});
-    console.log(formData);
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+      id: decks.length + 1,
+    });
   };
 
   return (
     <div className="container">
       <DeckForm
-      edit={edit}
+        edit={edit}
         handleChange={handlePropChange}
         handleSubmit={handleCreateDeck}
         formData={formData}
