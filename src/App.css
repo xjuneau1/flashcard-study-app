@@ -5,3 +5,17 @@ body {
     font-family: 'Signika Negative', sans-serif;
     font-size: 1.1em;
 }
+
+.badge-primary {
+    transition: 400ms;
+}
+.badge-secondary {
+    transition: 400ms;
+}
+
+.btn-danger {
+    transition: 400ms;
+}
+.btn-primary {
+    transition: 400ms;
+}
