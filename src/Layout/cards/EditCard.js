@@ -6,15 +6,15 @@ import Breadcrumb from "../Breadcrumb";
 import { readCard, updateCard } from "../../utils/api";
 
 function EditCard({ deck }) {
-    
+  const {cardId} = useParams()
+  
   const initFormData = {
-    id: deck.cards.length + 1,
+    "id": "",
     front: "",
     back: "",
   };
 
-  const [formData, setFormData] = useState(initFormData);
-  const { cardId } = useParams();
+  const [formData, setFormData] = useState({...initFormData, "id": cardId});
 
   useEffect(() => {
     async function getCard() {

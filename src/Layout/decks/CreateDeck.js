@@ -17,7 +17,6 @@ function CreateDeck({ edit, decks, setDecks }) {
     async function getDecks() {
       listDecks()
         .then((data) => setDecks(data))
-        .then(console.log(decks));
     }
     getDecks();
   }, []);

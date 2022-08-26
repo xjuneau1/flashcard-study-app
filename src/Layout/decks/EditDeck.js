@@ -21,7 +21,6 @@ function EditDeck({edit, deck, pageName}) {
         async function getDeck(){
             await readDeck(deckId)
             .then((data)=> setFormData({...data}))
-            .then(console.log)
         }
         getDeck()
     },[])

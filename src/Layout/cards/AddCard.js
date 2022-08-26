@@ -15,14 +15,14 @@ function AddCard({deck, pageName}) {
     }
     
     const [formData, setFormData] = useState(initFormData)
-    console.log(formData)
+    
     const handleAddCard = async (event) => {
         event.preventDefault()
         await createCard(deckId, formData)
         .then(setFormData(initFormData))
     }
     const handlePropChange = ({target}) => {
-        setFormData({...formData, [target.name]:target.value, id:deck.cards.length+2 })
+        setFormData({...formData, [target.name]:target.value, id:deck.cards.length+1 })
     }
     return ( 
         <>
