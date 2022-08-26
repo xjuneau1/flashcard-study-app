@@ -25,7 +25,7 @@
 <br>
 <p>In order to use this application you must have the latest version of Node.js installed on your machine i.e version <a href="https://nodejs.org/en/">16.17.0 LTS or 18.8.0</a></p>
 
-``` NOTE: 16.17 LTS is the reccommended version of Node for this application.```
+``` NOTE: 16.17 LTS is the recommended version of Node for this application.```
 
 <p>Once you have installed Node on your machine,fork and clone and the repository and run the below command in your terminal:</p>
 
