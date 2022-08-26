@@ -13,6 +13,7 @@
     <a href='#ved'><li>Viewing, editing, deleting a single deck</li></a>
     <a href='#createcard'><li>Creating Cards</li></a>
     <a href='#editcard'><li>Editing Cards</li></a>
+    <a href='#study'><li>Study Deck</li></a>
 </ul>
 </ol>
 
@@ -129,6 +130,20 @@ This is normal and your card has indeed been submitted, you may add another or u
 <p>As you can see, the information from the card is already filled into the text boxes, all you need to do is add, change or delete, and click "Save". 
 <br>
 A prompt will appear, and once you click "OK" the changes will be made. Simply return to the deck view page and refresh to see your changes.</p>
+
+<br>
+
+<h3 id="study" style="text-decoration:1px underline">Study Deck:</h3>
+
+<p>From the deck view page, you can click on the "Study" button which will bring you to a page where you can study the cards in the chosen deck, you should see a page like in the image below:</p>
+
+[View image](readme-images/study.JPG?raw=true)
+
+<br>
+
+<p>You can click "Flip" to flip the card to to back side, when you do a "Next" button appears for you to change to the next card.
+<br>
+When you have flipped through all of your cards a prompt will appear, clicking "Okay" resets the cards and allows you to flip through them again from the beginning. Clicking "Cancel" will return you to the home page.</p>
 
 
 
