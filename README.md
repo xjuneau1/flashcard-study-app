@@ -8,11 +8,11 @@
 </ul>
     <a href='#client'><li>Using the Client</li></a>
 <ul>
-    <a href='#view'><li>Viewing decks</li></a>
-    <a href='#'><li>Creating a new Deck</li></a>
-    <a href='#'><li>Viewing, editing, deleting a single deck</li></a>
-    <a href='#'><li>Creating Cards</li></a>
-    <a href='#'><li>Editing Cards</li></a>
+    <a href='#view'><li>Viewing decks/Home page</li></a>
+    <a href='#createdeck'><li>Creating a new Deck</li></a>
+    <a href='#ved'><li>Viewing, editing, deleting a single deck</li></a>
+    <a href='#createcard'><li>Creating Cards</li></a>
+    <a href='#editcard'><li>Editing Cards</li></a>
 </ul>
 </ol>
 
@@ -57,12 +57,12 @@
 
 <br>
 
-<h3 id="view" style="text-decoration:1px underline">Viewing Decks:</h3>
+<h3 id="view" style="text-decoration:1px underline">Viewing Decks/Home Page:</h3>
 <br>
 <p style="font-size:14px">When you run the server you will land on a page like the one below:</p>
-<br>
 
-[View image](readme-images/viewdecks.JPG)
+
+[View image](readme-images/viewdecks.JPG?raw=true)
 
 <br>
 <p>From here you can "Create Deck" which will take you to a screen to create a new deck, or you can click "View" to view the entire details and all of the cards in the deck. </p>
@@ -71,12 +71,65 @@
 
 <br>
 
-<h3 id="create" style="text-decoration:1px underline">Creating a new Deck:</h3>
+<h3 id="createdeck" style="text-decoration:1px underline">Creating a new Deck:</h3>
 
 <p>From the Home page, if you clicked the "Create Deck" button you will land on a page that looks like the one displayed below.</p>
 
-<img src="./readme-images/createdeck.jpg">
+[View image](readme-images/createdeck.JPG?raw=true)
 
 <br>
 <p>On this page you can add a deck name and description, and click "Submit", this will create a new deck with the given name and description and send you to the deck page to edit the deck further. </p>
 <br>
+
+<h3 id="ved" style="text-decoration:1px underline">Viewing, editing, deleting a single deck:</h3>
+
+<p>From the Home Page if you clicked "View" or if you created a new deck and submitted it, then you would be presented with a page that look like the image below:</p>
+
+[View image](readme-images/ved.JPG?raw=true)
+
+<br>
+<p> On this page you can :</p>
+
+<ol>
+    <li>Edit the deck details by clicking "Edit" under the deck name and description.</li>
+    <li>You can click "Study" to begin studying the cards in the deck. </li>
+    <li>Click "Add Cards" to create new cards for the current deck.</li>
+    <li>Click "Delete Deck" to delete the Deck and all of it's cards</li>
+</ol>
+
+
+<p>In addition, you can view the front and back of the cards and edit them. From this page you also have the option to delete individual cards.</p>
+
+<br>
+
+<h3 id="createcard" style="text-decoration:1px underline">Creating Cards:</h3>
+
+<p>From the deck view screen you can click "Add Cards" to arrive at a page like the one shown in the image below:</p>
+
+[View image](readme-images/createcard.JPG?raw=true)
+
+<br>
+<p>On this page you can add text to the front and back of the card. When you submit, the page will reload and the text inside the boxes will disappear. 
+<br>
+This is normal and your card has indeed been submitted, you may add another or use the navigation bar to return to the deck page.</p>
+
+```NOTE: Once back on the deck view page from the "Create Card" page, you may need to refresh the page for the new card to load.```
+
+
+<br>
+
+<h3 id="editcard" style="text-decoration:1px underline">Editing Cards:</h3>
+
+<p>From the deck view page, you can click on the "Edit" button on each card to edit those specific cards. When you do, you will be presented with a page that look like the image below:</p>
+
+[View image](readme-images/editcard.JPG?raw=true)
+
+<br>
+
+<p>As you can see, the information from the card is already filled into the text boxes, all you need to do is add, change or delete, and click "Save". 
+<br>
+A prompt will appear, and once you click "OK" the changes will be made. Simply return to the deck view page and refresh to see your changes.</p>
+
+
+
+<h2>Thanks for checking out my FlashCard Mania Application!</h2>
