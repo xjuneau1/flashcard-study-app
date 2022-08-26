@@ -46,7 +46,7 @@ function EditDeck({edit, deck, pageName}) {
     return ( 
         <div>
             <Breadcrumb deck={deck} pageName={pageName} />
-            <DeckForm 
+            <DeckForm
             edit={!edit} 
             pageName={pageName} 
             formData={formData}

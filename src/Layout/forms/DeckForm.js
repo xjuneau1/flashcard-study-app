@@ -15,7 +15,7 @@ function DeckForm({ edit, formData, pageName, handleChange, handleSubmit }) {
             <div className="ml-1">{pageName}</div>
           </div>
         ) : null}
-        <div>
+        <div className="mt-2">
           <h3>{pageName}</h3>
           <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
